@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Create-Blog</title>
+  
+  <subtitle>GitHub + Git + Hexo 搭建博客思考，记录，构造，分享</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-05-15T10:49:13.639Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>JoAiden Lee</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Point_Memory</title>
+    <link href="http://yoursite.com/2019/05/15/Point-Memory/"/>
+    <id>http://yoursite.com/2019/05/15/Point-Memory/</id>
+    <published>2019-05-15T10:11:19.000Z</published>
+    <updated>2019-05-15T10:49:13.639Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;==================================&lt;/p&gt;
+&lt;p&gt;内存和指针对于应用程序的响应优化处理&lt;/p&gt;
+&lt;p&gt;1.编译器对程序进行编译过程中，对于字节对齐有利于内存的寻址，从而提高程序的运行效率&lt;br&gt;2.&lt;br&gt;3.&lt;br&gt;内存分区&lt;br&gt;说明&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2019/05/08/CreateMyselfBlog/"/>
+    <id>http://yoursite.com/2019/05/08/CreateMyselfBlog/</id>
+    <published>2019-05-08T02:38:27.809Z</published>
+    <updated>2019-05-08T02:38:27.809Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;GitHub-git-hexo-建立自己的博客&quot;&gt;&lt;a href=&quot;#GitHub-git-hexo-建立自己的博客&quot; class=&quot;headerlink&quot; title=&quot;GitHub + git + hexo 建立自己的博客&quot;&gt;&lt;/a&gt;GitHub + git 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MarkDown Document</title>
+    <link href="http://yoursite.com/2019/05/08/MarkDownMark/"/>
+    <id>http://yoursite.com/2019/05/08/MarkDownMark/</id>
+    <published>2019-05-08T01:51:13.000Z</published>
+    <updated>2019-05-08T06:37:13.361Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。&lt;br&gt;相比WYSIWYG编辑器&lt;br&gt;优点：&lt;br&gt;1、因为是纯文本，所以只要支持Markdown的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写作。&lt;br&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Opengl</title>
+    <link href="http://yoursite.com/2019/05/08/Opengl/"/>
+    <id>http://yoursite.com/2019/05/08/Opengl/</id>
+    <published>2019-05-08T01:51:13.000Z</published>
+    <updated>2019-05-08T01:51:13.230Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

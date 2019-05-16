@@ -160,6 +160,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Create-Blog" type="application/atom+xml">
+
 
 
   
@@ -282,7 +284,7 @@
         
         
           
-          <li class="menu-item menu-item-tags">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -292,7 +294,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-history"></i> <br>Archives</a>
 
   </li>
         
@@ -316,7 +318,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -326,24 +328,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-history"></i> <br>Archives</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
 
   </li>
         
@@ -367,7 +352,7 @@
         
         
           
-          <li class="menu-item menu-item-schedule">
+          <li class="menu-item menu-item-about">
 
     
     
@@ -377,41 +362,7 @@
 
     
 
-    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>Schedule</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-sitemap">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>Sitemap</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-commonweal">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>Commonweal 404</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
 
   </li>
 
@@ -487,12 +438,12 @@
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/MarkDown/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/15/Point-Memory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JoAiden Lee">
@@ -512,7 +463,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/10/MarkDown/" class="post-title-link" itemprop="url">Untitled</a>
+                <a href="/2019/05/15/Point-Memory/" class="post-title-link" itemprop="url">Point_Memory</a>
               
             
           </h1>
@@ -537,7 +488,7 @@
                 
               
 
-              <time title="Created: 2019-04-10 13:39:04 / Modified: 13:46:17" itemprop="dateCreated datePublished" datetime="2019-04-10T13:39:04+08:00">2019-04-10</time>
+              <time title="Created: 2019-05-15 18:11:19 / Modified: 18:49:13" itemprop="dateCreated datePublished" datetime="2019-05-15T18:11:19+08:00">2019-05-15</time>
             
 
             
@@ -582,97 +533,26 @@
       
         
           
-            <h1 id="markdown-Document-Make"><a href="#markdown-Document-Make" class="headerlink" title="markdown Document Make"></a>markdown Document Make</h1><p>##一、标题</p>
-<p>##二、字体</p>
-<p>###加粗</p>
-<p>######要加粗的文字左右分别用两个*号包起来</p>
-<p>###斜体</p>
-<p>######要倾斜的文字左右分别用一个*号包起来</p>
-<p>###斜体加粗</p>
-<p>######要倾斜和加粗的文字左右分别用三个*号包起来</p>
-<p>###删除线</p>
-<p>######要加删除线的文字左右分别用两个~~号包起来</p>
-<p>##三、引用</p>
-<p>###在引用的文字前加&gt;即可。</p>
-<p>######引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;</p>
-<p>######n个…</p>
-<p>######貌似可以一直加下去，但没神马卵用</p>
-<p>######示例：</p>
-<p>##四、分割线</p>
-<p>###三个或者三个以上的 - 或者 * 都可以。</p>
-<p>######示例：</p>
-<p>##五、图片</p>
-<p>###语法：</p>
-<p>######<img src="图片地址" alt="图片alt" title="&#39;图片title&#39;"></p>
-<p>######图片alt就是显示在图片下面的文字，相当于对图片内容的解释。</p>
-<p>######图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</p>
-<p>##六、超链接</p>
-<p>###语法：</p>
-<p>######<a href="超链接地址" title="超链接title">超链接名</a></p>
-<p>######title可加可不加</p>
-<p>###a标签代替。</p>
-<p>######<a href="超链接地址" target="_blank">超链接名</a></p>
-<p>##七、列表</p>
-<p>###无序列表</p>
-<p>######语法：</p>
-<p>######无序列表用 - + * 任何一种都可以</p>
-<p>######- 列表内容</p>
-<p>######+ 列表内容</p>
-<p>######* 列表内容</p>
-<p>######注意：- + * 跟内容之间都要有一个空格</p>
-<p>###有序列表</p>
-<p>######语法：</p>
-<p>######数字加点</p>
-<p>######1.列表内容</p>
-<p>######2.列表内容</p>
-<p>######3.列表内容</p>
-<p>######注意：序号跟内容之间要有空格</p>
-<p>###列表嵌套</p>
-<p>######上一级和下一级之间敲三个空格即可</p>
-<p>######一级无序列表内容</p>
-<p>######二级无序列表内容</p>
-<p>######二级无序列表内容</p>
-<p>######二级无序列表内容</p>
-<p>######一级无序列表内容</p>
-<p>######二级有序列表内容</p>
-<p>######二级有序列表内容</p>
-<p>######二级有序列表内容</p>
-<p>######一级有序列表内容</p>
-<p>######二级无序列表内容</p>
-<p>######二级无序列表内容</p>
-<p>######二级无序列表内容</p>
-<p>######一级有序列表内容</p>
-<p>######二级有序列表内容</p>
-<p>######二级有序列表内容</p>
-<p>######二级有序列表内容</p>
-<p>##八、表格</p>
-<p>###语法：</p>
-<p>######表头|表头|表头</p>
-<p>######—|:–:|—:</p>
-<p>######内容|内容|内容</p>
-<p>######内容|内容|内容</p>
-<p>###第二行分割表头和内容。</p>
-<p>######- 有一个就行，为了对齐，多加了几个</p>
-<p>######文字默认居左</p>
-<p>######-两边加：表示文字居中</p>
-<p>######-右边加：表示文字居右</p>
-<p>######注：原生的语法两边都要用 | 包起来。此处省略</p>
-<p>######示例：</p>
-<p>######姓名|技能|排行</p>
-<p>######–|:–:|–:</p>
-<p>######刘备|哭|大哥</p>
-<p>######关羽|打|二哥</p>
-<p>######张飞|骂|三弟</p>
-<p>##九、代码</p>
-<p>###语法：</p>
-<p>######单行代码：代码之间分别用一个反引号包起来</p>
-<h6 id="代码内容"><a href="#代码内容" class="headerlink" title="代码内容"></a><code>代码内容</code></h6><p>######代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行</p>
-<p>######注：为了防止转译，前后三个反引号处加了小括号，实际是没有的。这里只是用来演示，实际中去掉两边小括号即可。</p>
-<p>##十、流程图</p>
-<p>######作者：高鸿祥</p>
-<p>######链接：<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">https://www.jianshu.com/p/191d1e21f7ed</a></p>
-<p>######来源：简书</p>
-<p>######简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。*</p>
+            <p>==================================</p>
+<p>内存和指针对于应用程序的响应优化处理</p>
+<p>1.编译器对程序进行编译过程中，对于字节对齐有利于内存的寻址，从而提高程序的运行效率<br>2.<br>3.<br>内存分区<br>说明<br>程序代码区<br>(code)<br>存放函数体的二进制代码。一个C语言程序由多个函数构成，C语言程序的执行就是函数之间的相互调用。<br>常量区<br>(constant)<br>存放一般的常量、字符串常量等。这块内存只有读取权限，没有写入权限，因此它们的值在程序运行期间不能改变。<br>全局数据区<br>(global data)<br>存放全局变量、静态变量等。这块内存有读写权限，因此它们的值在程序运行期间可以任意改变。<br>堆区<br>(heap)<br>一般由程序员分配和释放，若程序员不释放，程序运行结束时由操作系统回收。malloc()、calloc()、free() 等函数操作的就是这块内存，这也是本章要讲解的重点。</p>
+<p>注意：这里所说的堆区与数据结构中的堆不是一个概念，堆区的分配方式倒是类似于链表。<br>动态链接库<br>用于在程序运行期间加载和卸载动态链接库。<br>栈区<br>(stack)<br>存放函数的参数值、局部变量的值等，其操作方式类似于数据结构中的栈。</p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>char *str1 = “c.biancheng.net”;  //字符串在常量区，str1在全局数据区<br>int n;  //全局数据区</p>
+<p>char<em> func(){<br>    char </em>str = “C语言中文网”;  //字符串在常量区，str在栈区<br>    return str;<br>}</p>
+<p>int main(){<br>    int a;  //栈区<br>    char <em>str2 = “01234”;  //字符串在常量区，str2在栈区<br>    char  arr[20] = “56789”;  //字符串和arr都在栈区<br>    char </em>pstr = func();  //栈区<br>    int b;  //栈区</p>
+<pre><code>printf(&quot;str1: %#X\npstr: %#X\nstr2: %#X\n&quot;, str1, pstr, str2);
+puts(&quot;--------------&quot;);
+printf(&quot;&amp;str1: %#X\n   &amp;n: %#X\n&quot;, &amp;str1, &amp;n);
+puts(&quot;--------------&quot;);
+printf(&quot;  &amp;a: %#X\n arr: %#X\n  &amp;b: %#X\n&quot;, &amp;a, arr, &amp;b);
+puts(&quot;--------------&quot;);
+printf(&quot;n: %d\na :%d\nb: %d\n&quot;, n, a, b);
+puts(&quot;--------------&quot;);
+printf(&quot;%s\n&quot;, pstr);
+
+return 0;
+</code></pre><p>}</p>
 
           
         
@@ -736,7 +616,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/CreateMyselfBlog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/CreateMyselfBlog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JoAiden Lee">
@@ -756,7 +636,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/10/CreateMyselfBlog/" class="post-title-link" itemprop="url">Untitled</a>
+                <a href="/2019/05/08/CreateMyselfBlog/" class="post-title-link" itemprop="url">Untitled</a>
               
             
           </h1>
@@ -781,7 +661,7 @@
                 
               
 
-              <time title="Created: 2019-04-10 13:24:56" itemprop="dateCreated datePublished" datetime="2019-04-10T13:24:56+08:00">2019-04-10</time>
+              <time title="Created: 2019-05-08 10:38:27" itemprop="dateCreated datePublished" datetime="2019-05-08T10:38:27+08:00">2019-05-08</time>
             
 
             
@@ -822,13 +702,361 @@
       
         
           
-            <h1 id="GitHub-git-hexo-建立自己的博客"><a href="#GitHub-git-hexo-建立自己的博客" class="headerlink" title="GitHub + git + hexo 建立自己的博客"></a>GitHub + git + hexo 建立自己的博客</h1><p>#资源整合来自于: </p>
-<h1 id="http-lowrank-science-Hexo-Github"><a href="#http-lowrank-science-Hexo-Github" class="headerlink" title="http://lowrank.science/Hexo-Github/"></a><a href="http://lowrank.science/Hexo-Github/" target="_blank" rel="noopener">http://lowrank.science/Hexo-Github/</a></h1><h1 id="https-yxyuxuan-github-io"><a href="#https-yxyuxuan-github-io" class="headerlink" title="https://yxyuxuan.github.io/"></a><a href="https://yxyuxuan.github.io/" target="_blank" rel="noopener">https://yxyuxuan.github.io/</a></h1><h1 id="以及hexo官网相关文档"><a href="#以及hexo官网相关文档" class="headerlink" title="以及hexo官网相关文档"></a>以及hexo官网相关文档</h1><hr>
-<h3 id="关于gitHub-amp-git-的介绍："><a href="#关于gitHub-amp-git-的介绍：" class="headerlink" title="关于gitHub &amp; git 的介绍："></a>关于gitHub &amp; git 的介绍：</h3><p>#github </p>
-<h1 id="github-主要用来作为远程服务器端的代码文档等托管的平台。"><a href="#github-主要用来作为远程服务器端的代码文档等托管的平台。" class="headerlink" title="github 主要用来作为远程服务器端的代码文档等托管的平台。"></a>github 主要用来作为远程服务器端的代码文档等托管的平台。</h1><p>#git   </p>
-<h1 id="git-主要是用来本地插件和远端服务器进行连接的插件。"><a href="#git-主要是用来本地插件和远端服务器进行连接的插件。" class="headerlink" title="git 主要是用来本地插件和远端服务器进行连接的插件。"></a>git 主要是用来本地插件和远端服务器进行连接的插件。</h1><p>#hexo</p>
-<h1 id="hexo-服务器主要是用来把文档生成网页，并上传到github的工具。"><a href="#hexo-服务器主要是用来把文档生成网页，并上传到github的工具。" class="headerlink" title="hexo 服务器主要是用来把文档生成网页，并上传到github的工具。"></a>hexo 服务器主要是用来把文档生成网页，并上传到github的工具。</h1><h1 id="hexo-一般是在node-js的环境下安装的。"><a href="#hexo-一般是在node-js的环境下安装的。" class="headerlink" title="hexo 一般是在node.js的环境下安装的。"></a>hexo 一般是在node.js的环境下安装的。</h1><p>##具体各个部件的安装顺序如下：</p>
-<h1 id="github-账号申请，账号注册，远程仓库创建。"><a href="#github-账号申请，账号注册，远程仓库创建。" class="headerlink" title="github 账号申请，账号注册，远程仓库创建。"></a>github 账号申请，账号注册，远程仓库创建。</h1><h1 id="git-软件的下载和使用。"><a href="#git-软件的下载和使用。" class="headerlink" title="git 软件的下载和使用。"></a>git 软件的下载和使用。</h1><h1 id="hexo的搭建。"><a href="#hexo的搭建。" class="headerlink" title="hexo的搭建。"></a>hexo的搭建。</h1>
+            <h1 id="GitHub-git-hexo-建立自己的博客"><a href="#GitHub-git-hexo-建立自己的博客" class="headerlink" title="GitHub + git + hexo 建立自己的博客"></a>GitHub + git + hexo 建立自己的博客</h1><h1 id="资源整合来自于"><a href="#资源整合来自于" class="headerlink" title="资源整合来自于:"></a>资源整合来自于:</h1><h1 id="http-lowrank-science-Hexo-Github"><a href="#http-lowrank-science-Hexo-Github" class="headerlink" title="http://lowrank.science/Hexo-Github/"></a><a href="http://lowrank.science/Hexo-Github/" target="_blank" rel="noopener">http://lowrank.science/Hexo-Github/</a></h1><h1 id="https-yxyuxuan-github-io"><a href="#https-yxyuxuan-github-io" class="headerlink" title="https://yxyuxuan.github.io/"></a><a href="https://yxyuxuan.github.io/" target="_blank" rel="noopener">https://yxyuxuan.github.io/</a></h1><h1 id="以及hexo官网相关文档"><a href="#以及hexo官网相关文档" class="headerlink" title="以及hexo官网相关文档"></a>以及hexo官网相关文档</h1><hr>
+<h3 id="关于gitHub-amp-git-的介绍："><a href="#关于gitHub-amp-git-的介绍：" class="headerlink" title="关于gitHub &amp; git 的介绍："></a>关于gitHub &amp; git 的介绍：</h3><h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><h1 id="github-主要用来作为远程服务器端的代码文档等托管的平台。"><a href="#github-主要用来作为远程服务器端的代码文档等托管的平台。" class="headerlink" title="github 主要用来作为远程服务器端的代码文档等托管的平台。"></a>github 主要用来作为远程服务器端的代码文档等托管的平台。</h1><h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h1 id="git-主要是用来本地插件和远端服务器进行连接的插件。"><a href="#git-主要是用来本地插件和远端服务器进行连接的插件。" class="headerlink" title="git 主要是用来本地插件和远端服务器进行连接的插件。"></a>git 主要是用来本地插件和远端服务器进行连接的插件。</h1><h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><h1 id="hexo-服务器主要是用来把文档生成网页，并上传到github的工具。"><a href="#hexo-服务器主要是用来把文档生成网页，并上传到github的工具。" class="headerlink" title="hexo 服务器主要是用来把文档生成网页，并上传到github的工具。"></a>hexo 服务器主要是用来把文档生成网页，并上传到github的工具。</h1><h1 id="hexo-一般是在node-js的环境下安装的。"><a href="#hexo-一般是在node-js的环境下安装的。" class="headerlink" title="hexo 一般是在node.js的环境下安装的。"></a>hexo 一般是在node.js的环境下安装的。</h1><h2 id="具体各个部件的安装顺序如下："><a href="#具体各个部件的安装顺序如下：" class="headerlink" title="具体各个部件的安装顺序如下："></a>具体各个部件的安装顺序如下：</h2><h1 id="github-账号申请，账号注册，远程仓库创建。"><a href="#github-账号申请，账号注册，远程仓库创建。" class="headerlink" title="github 账号申请，账号注册，远程仓库创建。"></a>github 账号申请，账号注册，远程仓库创建。</h1><h1 id="git-软件的下载和使用。"><a href="#git-软件的下载和使用。" class="headerlink" title="git 软件的下载和使用。"></a>git 软件的下载和使用。</h1><h1 id="hexo的搭建。"><a href="#hexo的搭建。" class="headerlink" title="hexo的搭建。"></a>hexo的搭建。</h1>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+	<div>
+      	
+	</div>
+
+	<div>
+    	
+ 	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/MarkDownMark/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JoAiden Lee">
+      <meta itemprop="description" content="学海无涯，不一定非要苦作舟">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Create-Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/08/MarkDownMark/" class="post-title-link" itemprop="url">MarkDown Document</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-08 09:51:13 / Modified: 14:37:13" itemprop="dateCreated datePublished" datetime="2019-05-08T09:51:13+08:00">2019-05-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+		
+	<div>
+		
+		}
+	</div>
+      
+      
+
+      
+        
+          
+            <p>Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>相比WYSIWYG编辑器<br>优点：<br>1、因为是纯文本，所以只要支持Markdown的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写作。<br>2、操作简单。比如:WYSIWYG编辑时标记个标题，先选中内容，再点击导航栏的标题按钮，选择几级标题。要三个步骤。而Markdown只需要在标题内容前加#即可<br>缺点：<br>1、需要记一些语法（当然，是很简单。五分钟学会）。<br>2、有些平台不支持Markdown编辑模式。<br>还好，简书是支持Markdown编辑模式的。<br>开启方式：设置-&gt;默认编辑器-&gt;Markdown编辑器</p>
+<p>一、标题<br>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。<br>注：标准语法一般在#后跟个空格再写文字，貌似简书不加空格也行。<br>示例：</p>
+<h1 id="这是一级标题（-）"><a href="#这是一级标题（-）" class="headerlink" title="这是一级标题（#）"></a>这是一级标题（#）</h1><h2 id="这是二级标题（-）"><a href="#这是二级标题（-）" class="headerlink" title="这是二级标题（##）"></a>这是二级标题（##）</h2><h3 id="这是三级标题（-）"><a href="#这是三级标题（-）" class="headerlink" title="这是三级标题（###）"></a>这是三级标题（###）</h3><h4 id="这是四级标题（-）"><a href="#这是四级标题（-）" class="headerlink" title="这是四级标题（####）"></a>这是四级标题（####）</h4><h5 id="这是五级标题（-）"><a href="#这是五级标题（-）" class="headerlink" title="这是五级标题（#####）"></a>这是五级标题（#####）</h5><h6 id="这是六级标题（-）"><a href="#这是六级标题（-）" class="headerlink" title="这是六级标题（######）"></a>这是六级标题（######）</h6><h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h3><pre><code>要加粗的文字左右分别用两个*号包起来
+</code></pre><p>斜体</p>
+<pre><code>要倾斜的文字左右分别用一个*号包起来
+</code></pre><p>斜体加粗</p>
+<pre><code>要倾斜和加粗的文字左右分别用三个*号包起来
+</code></pre><p>删除线</p>
+<pre><code>要加删除线的文字左右分别用两个~~号包起来
+</code></pre><p>示例：<br>    <strong>这是加粗的文字</strong><br>    <em>这是倾斜的文字</em>`<br>    <strong><em>这是斜体加粗的文字</em></strong><br>    <del>这是加删除线的文字</del></p>
+<p>三、引用<br>    在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;<br>    n个…<br>    貌似可以一直加下去，但没神马卵用<br>示例：<br>    &gt;这是引用的内容<br>    &gt;&gt;这是引用的内容<br>    &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容</p>
+<p>四、分割线<br>    三个或者三个以上的 - 或者 <em> 都可以。<br>示例：<br>    — 1<br>    —- 2<br>    **</em> 3<br>    <strong>*</strong> 4</p>
+<p>五、图片</p>
+<p>语法：<br>    <img src="图片地址" alt="图片alt" title="&#39;图片title&#39;"></p>
+<pre><code>图片alt就是显示在图片下面的文字，相当于对图片内容的解释。
+图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加
+</code></pre><p>示例：<br>    <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+    u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链"></p>
+<p>六、超链接<br>语法：<br><a href="超链接地址" title="超链接title">超链接名</a><br>title可加可不加</p>
+<p>示例：<br><a href="http://jianshu.com" target="_blank" rel="noopener">简书</a><br><a href="http://baidu.com" target="_blank" rel="noopener">百度</a></p>
+<p>效果如下：<br>简书<br>    百度<br>    注：Markdown本身语法不支持链接在新页面中打开，貌似简书做了处理，是可以的。别的平台可能就不行了，如果想要在新页面中打开的话可以用html语言的a标签代替。<br>    <a href="超链接地址" target="_blank">超链接名</a></p>
+<p>示例<br>    <a href="https://www.jianshu.com/u/1f5ac0cf6a8b" target="_blank">简书</a></p>
+<p>七、列表</p>
+<p>无序列表</p>
+<p>语法：<br>    无序列表用 - + * 任何一种都可以</p>
+<pre><code>- 列表内容
++ 列表内容
+* 列表内容
+</code></pre><p>注意：- + * 跟内容之间都要有一个空格</p>
+<p>有序列表</p>
+<p>语法：<br>    数字加点<br>    1.列表内容<br>    2.列表内容<br>    3.列表内容</p>
+<p>注意：序号跟内容之间要有空格</p>
+<p>列表嵌套</p>
+<p>上一级和下一级之间敲三个空格即可</p>
+<p>一级无序列表内容<br>二级无序列表内容<br>二级无序列表内容<br>二级无序列表内容</p>
+<p>一级无序列表内容<br>二级有序列表内容<br>二级有序列表内容<br>二级有序列表内容</p>
+<p>一级有序列表内容<br>二级无序列表内容<br>二级无序列表内容<br>二级无序列表内容</p>
+<p>一级有序列表内容<br>二级有序列表内容<br>二级有序列表内容<br>二级有序列表内容</p>
+<p>八、表格<br>语法：<br>表头|表头|表头<br>—|:–:|—:<br>内容|内容|内容<br>内容|内容|内容</p>
+<p>第二行分割表头和内容。</p>
+<ul>
+<li>有一个就行，为了对齐，多加了几个<br>文字默认居左<br>-两边加：表示文字居中<br>-右边加：表示文字居右<br>注：原生的语法两边都要用 | 包起来。此处省略</li>
+</ul>
+<p>示例：<br>姓名|技能|排行<br>–|:–:|–:<br>刘备|哭|大哥<br>关羽|打|二哥<br>张飞|骂|三弟</p>
+<p>九、代码<br>语法：<br>单行代码：代码之间分别用一个反引号包起来<br>    <code>代码内容</code></p>
+<p>代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">代码...</span><br><span class="line">代码...</span><br><span class="line">代码...</span><br></pre></td></tr></table></figure></p>
+<p>注：为了防止转译，前后三个反引号处加了小括号，实际是没有的。这里只是用来演示，实际中去掉两边小括号即可。</p>
+<p>示例：<br>单行代码<br><code>create database hero;</code></p>
+<p>代码块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun()&#123;</span><br><span class="line">     echo &quot;这是一句非常牛逼的代码&quot;;</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure></p>
+<p>十、流程图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line">e=&gt;end</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br><span class="line">&amp;</span><br></pre></td></tr></table></figure></p>
+<p>作者：高鸿祥<br>链接：<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">https://www.jianshu.com/p/191d1e21f7ed</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+	<div>
+      	
+	</div>
+
+	<div>
+    	
+ 	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/Opengl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JoAiden Lee">
+      <meta itemprop="description" content="学海无涯，不一定非要苦作舟">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Create-Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/08/Opengl/" class="post-title-link" itemprop="url">Opengl</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-08 09:51:13" itemprop="dateCreated datePublished" datetime="2019-05-08T09:51:13+08:00">2019-05-08</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+		
+	<div>
+		
+		}
+	</div>
+      
+      
+
+      
+        
+          
+            
           
         
       
@@ -920,7 +1148,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -933,9 +1161,75 @@
           
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           
 
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yourname" title="GitHub &rarr; https://github.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yourname@gmail.com" title="E-Mail &rarr; mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/yourname" title="Weibo &rarr; https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/yourname" title="Google &rarr; https://plus.google.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/yourname" title="Twitter &rarr; https://twitter.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+            </div>
           
 
           
