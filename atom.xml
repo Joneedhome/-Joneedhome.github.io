@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-15T10:49:13.639Z</updated>
+  <updated>2019-05-16T14:59:22.608Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,19 +17,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Point_Memory</title>
+    <title>Point指针和Memory内存</title>
     <link href="http://yoursite.com/2019/05/15/Point-Memory/"/>
     <id>http://yoursite.com/2019/05/15/Point-Memory/</id>
     <published>2019-05-15T10:11:19.000Z</published>
-    <updated>2019-05-15T10:49:13.639Z</updated>
+    <updated>2019-05-16T14:59:22.608Z</updated>
     
     <summary type="html">
     
       
       
         &lt;p&gt;==================================&lt;/p&gt;
-&lt;p&gt;内存和指针对于应用程序的响应优化处理&lt;/p&gt;
-&lt;p&gt;1.编译器对程序进行编译过程中，对于字节对齐有利于内存的寻址，从而提高程序的运行效率&lt;br&gt;2.&lt;br&gt;3.&lt;br&gt;内存分区&lt;br&gt;说明&lt;
+&lt;h1 id=&quot;内存&quot;&gt;&lt;a href=&quot;#内存&quot; class=&quot;headerlink&quot; title=&quot;内存&quot;&gt;&lt;/a&gt;内存&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;C语言中使用的地址是假的，计算机是通过虚
       
     
     </summary>
