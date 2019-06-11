@@ -1826,7 +1826,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #96daff;
+  background: #1affb9;
 }
 .feed-link,
 .chat {
@@ -2663,11 +2663,8 @@ pre .deletion {
   background: #ffeef0;
 }
 body {
-  background: url("/images/background.jpg");
+  background: url("/images/GroundBack.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
-}
-.container {
-  background-color: rgba(0,0,0,0.75);
 }

@@ -147,17 +147,17 @@
 
 
 
-  <meta name="description" content="学海无涯，不一定非要苦作舟">
+  <meta name="description" content="#栈和队列 入栈 ：先入后出队列 ：先入先出123456789101112131415161718192021222324顺序栈入栈函数pushstatus push(elemtype e)&amp;#123;	if(top&amp;gt;m)&amp;#123;上溢&amp;#125;	else s[top++]=e;&amp;#125;顺序栈出栈函数popstatus pop()&amp;#123;	if(top=L)&amp;#123;下溢&amp;#1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Opengl">
-<meta property="og:url" content="http://yoursite.com/2019/05/08/Opengl/index.html">
+<meta property="og:title" content="栈和队列">
+<meta property="og:url" content="http://yoursite.com/2019/05/08/栈和队列/index.html">
 <meta property="og:site_name" content="Create-Blog">
-<meta property="og:description" content="学海无涯，不一定非要苦作舟">
+<meta property="og:description" content="#栈和队列 入栈 ：先入后出队列 ：先入先出123456789101112131415161718192021222324顺序栈入栈函数pushstatus push(elemtype e)&amp;#123;	if(top&amp;gt;m)&amp;#123;上溢&amp;#125;	else s[top++]=e;&amp;#125;顺序栈出栈函数popstatus pop()&amp;#123;	if(top=L)&amp;#123;下溢&amp;#1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-08T01:51:13.230Z">
+<meta property="og:updated_time" content="2019-06-10T11:46:59.008Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Opengl">
-<meta name="twitter:description" content="学海无涯，不一定非要苦作舟">
+<meta name="twitter:title" content="栈和队列">
+<meta name="twitter:description" content="#栈和队列 入栈 ：先入后出队列 ：先入先出123456789101112131415161718192021222324顺序栈入栈函数pushstatus push(elemtype e)&amp;#123;	if(top&amp;gt;m)&amp;#123;上溢&amp;#125;	else s[top++]=e;&amp;#125;顺序栈出栈函数popstatus pop()&amp;#123;	if(top=L)&amp;#123;下溢&amp;#1">
 
 
 
@@ -167,7 +167,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/08/Opengl/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/08/栈和队列/">
 
 
 
@@ -177,7 +177,7 @@
   };
 </script>
 
-  <title>Opengl | Create-Blog</title>
+  <title>栈和队列 | Create-Blog</title>
   
 
 
@@ -443,7 +443,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/Opengl/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/栈和队列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JoAiden Lee">
@@ -460,7 +460,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Opengl
+          <h1 class="post-title" itemprop="name headline">栈和队列
 
               
             
@@ -489,6 +489,22 @@
               <time title="Created: 2019-05-08 09:51:13" itemprop="dateCreated datePublished" datetime="2019-05-08T09:51:13+08:00">2019-05-08</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-10 19:46:59" itemprop="dateModified" datetime="2019-06-10T19:46:59+08:00">2019-06-10</time>
+              
             
           </span>
 
@@ -532,7 +548,9 @@
       
 
       
-        
+        <p>#栈和队列</p>
+<p>入栈 ：先入后出<br>队列 ：先入先出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">顺序栈入栈函数push</span><br><span class="line">status push(elemtype e)</span><br><span class="line">&#123;</span><br><span class="line">	if(top&gt;m)&#123;上溢&#125;</span><br><span class="line">	else s[top++]=e;</span><br><span class="line">&#125;</span><br><span class="line">顺序栈出栈函数pop</span><br><span class="line">status pop()</span><br><span class="line">&#123;</span><br><span class="line">	if(top=L)&#123;下溢&#125;</span><br><span class="line">	else&#123;e=s[--top]; return(e);&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">队列：</span><br><span class="line">typedef struct qnode&#123;</span><br><span class="line">	qelemtype data;</span><br><span class="line">	struct qnode *next;</span><br><span class="line">&#125;qnode,*queueptr;</span><br><span class="line"></span><br><span class="line">链队列定义：</span><br><span class="line">typedef struct &#123;</span><br><span class="line">	queueptr front;</span><br><span class="line">	queueptr rear;</span><br><span class="line">&#125;linkqueue;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -552,12 +570,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>Opengl</p>
+  <p><span>本文标题:</span>栈和队列</p>
   <p><span>文章作者:</span>JoAiden Lee</p>
   <p><span>发布时间:</span>2019年05月08日 - 09:51:13</p>
-  <p><span>最后更新:</span>2019年05月08日 - 09:51:13</p>
-  <p><span>原始链接:</span><a href="/2019/05/08/Opengl/" title="Opengl">http://yoursite.com/2019/05/08/Opengl/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/05/08/Opengl/" aria-label="复制成功！"></i></span>
+  <p><span>最后更新:</span>2019年06月10日 - 19:46:59</p>
+  <p><span>原始链接:</span><a href="/2019/05/08/栈和队列/" title="栈和队列">http://yoursite.com/2019/05/08/栈和队列/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/05/08/栈和队列/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -611,14 +629,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/08/树和二叉树/" rel="next" title="树和二叉树">
+                <i class="fa fa-chevron-left"></i> 树和二叉树
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/08/MarkDownMark/" rel="prev" title="MarkDown Document">
-                MarkDown Document <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/08/时间和空间复杂度/" rel="prev" title="时间和空间复杂度">
+                时间和空间复杂度 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -681,7 +703,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

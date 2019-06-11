@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-16T14:59:22.608Z</updated>
+  <updated>2019-06-11T06:57:03.286Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,18 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Windows数据类型解析</title>
+    <link href="http://yoursite.com/2019/06/11/windows%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://yoursite.com/2019/06/11/windows数据类型/</id>
+    <published>2019-06-11T05:32:14.000Z</published>
+    <updated>2019-06-11T06:57:03.286Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Windows数据类型详解&quot;&gt;&lt;a href=&quot;#Windows数据类型详解&quot; class=&quot;headerlink&quot; title=&quot;Windows数据类型详解&quot;&gt;&lt;/a&gt;Windows数据类型详解&lt;/h1&gt;&lt;p&gt;Windows字符和字符串处理&lt;br&gt;友情提示：&lt;b
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Point指针和Memory内存</title>
     <link href="http://yoursite.com/2019/05/15/Point-Memory/"/>
     <id>http://yoursite.com/2019/05/15/Point-Memory/</id>
     <published>2019-05-15T10:11:19.000Z</published>
-    <updated>2019-05-16T14:59:22.608Z</updated>
+    <updated>2019-05-18T06:20:03.580Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;==================================&lt;/p&gt;
-&lt;h1 id=&quot;内存&quot;&gt;&lt;a href=&quot;#内存&quot; class=&quot;headerlink&quot; title=&quot;内存&quot;&gt;&lt;/a&gt;内存&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;C语言中使用的地址是假的，计算机是通过虚
+        &lt;h1 id=&quot;一、内存&quot;&gt;&lt;a href=&quot;#一、内存&quot; class=&quot;headerlink&quot; title=&quot;一、内存&quot;&gt;&lt;/a&gt;一、内存&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;C语言中使用的地址是假的，计算机是通过虚拟内存地址访问到真实的物理内存的。虚拟内存通过内存映射来找到物理
+内
       
     
     </summary>
@@ -37,36 +56,18 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2019/05/08/CreateMyselfBlog/"/>
-    <id>http://yoursite.com/2019/05/08/CreateMyselfBlog/</id>
-    <published>2019-05-08T02:38:27.809Z</published>
-    <updated>2019-05-08T02:38:27.809Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;GitHub-git-hexo-建立自己的博客&quot;&gt;&lt;a href=&quot;#GitHub-git-hexo-建立自己的博客&quot; class=&quot;headerlink&quot; title=&quot;GitHub + git + hexo 建立自己的博客&quot;&gt;&lt;/a&gt;GitHub + git 
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>MarkDown Document</title>
-    <link href="http://yoursite.com/2019/05/08/MarkDownMark/"/>
-    <id>http://yoursite.com/2019/05/08/MarkDownMark/</id>
+    <title>数据结构概念</title>
+    <link href="http://yoursite.com/2019/05/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E5%BF%B5/"/>
+    <id>http://yoursite.com/2019/05/08/数据结构概念/</id>
     <published>2019-05-08T01:51:13.000Z</published>
-    <updated>2019-05-08T06:37:13.361Z</updated>
+    <updated>2019-06-10T11:47:01.082Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。&lt;br&gt;相比WYSIWYG编辑器&lt;br&gt;优点：&lt;br&gt;1、因为是纯文本，所以只要支持Markdown的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写作。&lt;br&gt;
+        &lt;p&gt;#数据结构概念&lt;br&gt;数据结构分为逻辑结构，存储结构，数据运算&lt;/p&gt;
+&lt;p&gt;数据： 所有被计算机识别存储和处理的符号的集合&lt;br&gt;数据元素：数据的基本单位，具有完整意义&lt;br&gt;数据对象：具有相同性质的数据元素的集合，是数据的一个子集&lt;br&gt;数据结构：是相互之间存在一种或多
       
     
     </summary>
@@ -75,13 +76,115 @@
   </entry>
   
   <entry>
-    <title>Opengl</title>
-    <link href="http://yoursite.com/2019/05/08/Opengl/"/>
-    <id>http://yoursite.com/2019/05/08/Opengl/</id>
+    <title>数组问题</title>
+    <link href="http://yoursite.com/2019/05/08/%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/05/08/数组问题/</id>
     <published>2019-05-08T01:51:13.000Z</published>
-    <updated>2019-05-08T01:51:13.230Z</updated>
+    <updated>2019-06-10T14:26:05.828Z</updated>
     
     <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;数组问题&lt;br&gt;数组是最常用的基础数据结构，它将元素保存在连续的内存中。它也是面试最喜欢的问题之一，在代码面试中你会经常听到很多关于数组的问题，例如，数组的反转、数组的排序或者查找数组中的一个元素。&lt;br&gt;数组结构的一个关键优点是在知道索引的情况能够以 O(1)
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>时间和空间复杂度</title>
+    <link href="http://yoursite.com/2019/05/08/%E6%97%B6%E9%97%B4%E5%92%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
+    <id>http://yoursite.com/2019/05/08/时间和空间复杂度/</id>
+    <published>2019-05-08T01:51:13.000Z</published>
+    <updated>2019-06-10T11:51:23.336Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;时间和空间复杂度&quot;&gt;&lt;a href=&quot;#时间和空间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间和空间复杂度&quot;&gt;&lt;/a&gt;时间和空间复杂度&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>栈和队列</title>
+    <link href="http://yoursite.com/2019/05/08/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    <id>http://yoursite.com/2019/05/08/栈和队列/</id>
+    <published>2019-05-08T01:51:13.000Z</published>
+    <updated>2019-06-10T11:46:59.008Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#栈和队列&lt;/p&gt;
+&lt;p&gt;入栈 ：先入后出&lt;br&gt;队列 ：先入先出&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;s
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>树和二叉树</title>
+    <link href="http://yoursite.com/2019/05/08/%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <id>http://yoursite.com/2019/05/08/树和二叉树/</id>
+    <published>2019-05-08T01:51:13.000Z</published>
+    <updated>2019-06-11T06:00:57.943Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;树和二叉树&quot;&gt;&lt;a href=&quot;#树和二叉树&quot; class=&quot;headerlink&quot; title=&quot;树和二叉树&quot;&gt;&lt;/a&gt;树和二叉树&lt;/h1&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构</title>
+    <link href="http://yoursite.com/2019/05/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9F%A5%E8%AF%A2%E8%A1%A8/"/>
+    <id>http://yoursite.com/2019/05/08/数据结构查询表/</id>
+    <published>2019-05-08T01:51:13.000Z</published>
+    <updated>2019-06-10T14:15:27.007Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;数据结构&lt;br&gt;链表&lt;br&gt;链表是一种由节点（Node）组成的线性数据集合，每个节点通过指针指向下一个节点。它是一种由节点组成，并能用于表示序列的数据结构。&lt;br&gt;单链表：每个节点仅指向下一个节点，最后一个节点指向空（null）。&lt;br&gt;双链表：每个节点有两个指针p，n。p
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Windows API函数总结</title>
+    <link href="http://yoursite.com/2019/05/08/Windows-api/"/>
+    <id>http://yoursite.com/2019/05/08/Windows-api/</id>
+    <published>2019-05-08T01:51:13.000Z</published>
+    <updated>2019-06-10T13:21:03.310Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;API函数（Windows）&quot;&gt;&lt;a href=&quot;#API函数（Windows）&quot; class=&quot;headerlink&quot; title=&quot;API函数（Windows）&quot;&gt;&lt;/a&gt;API函数（Windows）&lt;/h1&gt;&lt;p&gt;一、隐藏和显示光标&lt;br&gt;　　函数： int
+      
     
     </summary>
     
