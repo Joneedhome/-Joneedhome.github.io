@@ -488,7 +488,7 @@
                 
               
 
-              <time title="Created: 2019-06-11 20:52:18 / Modified: 21:09:30" itemprop="dateCreated datePublished" datetime="2019-06-11T20:52:18+08:00">2019-06-11</time>
+              <time title="Created: 2019-06-11 20:52:18 / Modified: 21:57:41" itemprop="dateCreated datePublished" datetime="2019-06-11T20:52:18+08:00">2019-06-11</time>
             
 
             
@@ -532,55 +532,21 @@
 
       
         
-          
-            <h1 id="在ANSIC中，对文件的操作分为两种方式，即"><a href="#在ANSIC中，对文件的操作分为两种方式，即" class="headerlink" title="在ANSIC中，对文件的操作分为两种方式，即:"></a>在ANSIC中，对文件的操作分为两种方式，即:</h1><ul>
+          <h2 id="在ANSIC中，对文件的操作分为两种方式"><a href="#在ANSIC中，对文件的操作分为两种方式" class="headerlink" title="在ANSIC中，对文件的操作分为两种方式"></a>在ANSIC中，对文件的操作分为两种方式</h2><ul>
 <li>流式文件操作 *</li>
-<li>I/O文件操作 *</li>
-</ul>
-<h2 id="一、流式文件操作"><a href="#一、流式文件操作" class="headerlink" title="一、流式文件操作"></a>一、流式文件操作</h2><p>这种方式的文件操作有一个重要的结构FILE，FILE在stdio.h中定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">typedef struct &#123;</span><br><span class="line">	int level; /* fill/empty level of buffer */</span><br><span class="line">	unsigned flags; /* File status flags */</span><br><span class="line">	char fd; /* File descriptor */</span><br><span class="line">	unsigned char hold; /* Ungetc char if no buffer */</span><br><span class="line">	int bsize; /* Buffer size */</span><br><span class="line">	unsigned char _FAR *buffer; /* Data transfer buffer */</span><br><span class="line">	unsigned char _FAR *curp; /* Current active pointer */</span><br><span class="line">	unsigned istemp; /* Temporary file indicator */</span><br><span class="line">	short token; /* Used for validity checking */</span><br><span class="line">&#125; FILE; /* This is the FILE object */</span><br></pre></td></tr></table></figure></p>
-<p>函数  　　　　　　        功能<br>fopen() 　　　　　　　　 打开流<br>fclose() 　　　　　　　　关闭流<br>fputc() 　　　　　　　　 写一个字符到流中<br>fgetc() 　　　　　　　　 从流中读一个字符<br>fseek() 　　　　　　　　 在流中定位到指定的字符<br>fputs() 　　　　　　　　 写字符串到流<br>fgets() 　　　　　　　　 从流中读一行或指定个字符<br>fprintf() 　　　　　　　 按格式输出到流<br>fscanf() 　　　　　　　  从流中按格式读取<br>feof() 　　　　　　　　  到达文件尾时返回真值<br>ferror() 　　　　　　　  发生错误时返回其值<br>rewind() 　　　　　　    复位文件定位器到文件开始处<br>remove() 　　　　　   　 删除文件<br>fread() 　　　　　　　   从流中读指定个数的字符<br>fwrite() 　　　　　　　  向流中写指定个数的字符<br>tmpfile() 　　　　　　   生成一个临时文件流<br>tmpnam() 　　　　　      生成一个唯一的文件名</p>
-<ol>
-<li><p>fopen()<br>fopen的原型是：FILE <em>fopen(const char </em>filename,const char *mode)，fopen实现三个功能<br>为使用而打开一个流 ;把一个文件和此流相连接;给此流返回一个FILR指针<br>参数filename指向要打开的文件名，mode表示打开状态的字符串，其取值如下表<br>“r” 以只读方式打开文件                   “w” 以只写方式打开文件               “a” 以追加方式打开文件<br>“r+” 以读/写方式打开文件，如无文件出错           “w+” 以读/写方式打开文件，如无文件生成新文件<br>一个文件可以以文本模式或二进制模式打开，这两种的区别是：在文本模式中回车被当成一个字符’n’，而二进制模式认为它是两个字符0x0D,0x0A；如果在文件中读到0x1B，文本模式会认为这是文件结束符，也就是二进制模型不会对文件进行处理，而文本方式会按一定的方式对数据作相应的转换。<br>系统默认的是以文本模式打开，可以修改全部变量_fmode的值来修改这个设置，例如_fmode=O_TEXT；就设置默认打开方式为文本模式；而_fmode=O_BINARY；则设置默认打开方式是二进制模式。<br>我们也可以在模式字符串中指定打开的模式，如”rb”表示以二进制模式打开只读文件，”w+t”或”wt+”表示以文本模式打开读/写文件。<br>此函数返回一个FILE指针，所以申明一个FILE指针后不用初始化，而是用fopen()来返回一个指针并与一个特定的文件相连，如果成败，返回NULL。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例:</span><br><span class="line">	FILE *fp;</span><br><span class="line">　　if(fp=fopen(&quot;123.456&quot;,&quot;wb&quot;))</span><br><span class="line">　　　　puts(&quot;打开文件成功&quot;);</span><br><span class="line">　　else</span><br><span class="line">　　　　puts(&quot;打开文件成败&quot;);</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>fclose()<br>功能是关闭用fopen()打开的文件，其原型是：int fclose(FILE *fp);如果成功，返回0,失败返回EOF。在程序结束时一定要记得关闭打开的文件，不然可能会造成数据丢失。</p>
-</li>
-<li>fputc()：向流写一个字符，原型是int fputc(int c, FILE *stream); 成功返回这个字符,失败返回EOF。例：fputc(‘X’,fp);</li>
-<li>fgetc()：从流中读一个字符，原型是int fputc(FILE *stream); 成功返回这个字符,失败返回EOF。</li>
-<li>fseek()：此函数一般用于二进制模式打开的文件中，功能是定位到流中指定的位置，原型是int fseek(FILE *stream, long offset, int whence);如果成功返回0，参数offset是移动的字符数，whence是移动的基准，取值是<br>符号常量 值 基准位置<br>SEEK_SET 0 文件开头<br>SEEK_CUR 1 当前读写的位置<br>SEEK_END 2 文件尾部</li>
-<li>fputs()：写一个字符串到流中，原型int fputs(const char <em>s, FILE </em>stream);<br>例：fputs(“I Love You”,fp);</li>
-<li>fgets()：从流中读一行或指定个字符，原型是char <em>fgets(char </em>s, int n, FILE *stream); 从流中读取n-1个字符，除非读完一行，参数s是来接收字符串，如果成功则返回s的指针，否则返回NULL。<br>如果用 fgets(str1,4,file1);  则执行后str1=”Lov”，读取了4-1=3个字符，而如果用 fgets(str1,23,file1);<br>则执行str=”Love ,I Have”，读取了一行(不包括行尾的’n’)。</li>
-<li>fprintf()：按格式输入到流，其原型是int fprintf(FILE <em>stream, const char </em>format[, argument, …]);其用法和printf()相同，不过不是写到控制台，而是写到流罢了.例：fprintf(fp,”%2d%s”,4,”Hahaha”);</li>
-<li>fscanf()：从流中按格式读取，其原型是int fscanf(FILE <em>stream, const char </em>format[, address, …]);其用法和scanf()相同，不过不是从控制台读取，而是从流读取罢了。例：fscanf(fp,”%d%d” ,&amp;x,&amp;y);</li>
-<li><p>feof()： 检测是否已到文件尾，是返回真，否则返回0，其原型是int feof(FILE *stream);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">11. ferror()： 原型是int ferror(FILE *stream);返回流最近的错误代码，可用clearerr()来清除它，clearerr()的原型是void clearerr(FILE *stream);</span><br><span class="line">```例：printf(&quot;%d&quot;,ferror(fp));</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>rewind()：把当前的读写位置回到文件开始，原型是void rewind(FILE *stream);其实本函数相当于fseek(fp,0L,SEEK_SET);例：rewind(fp);</p>
-</li>
-<li>remove()：删除文件，原型是int remove(const char *filename); 参数就是要删除的文件名，成功返回0。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">14. fread()：从流中读指定个数的字符，原型是size_t fread(void *ptr, size_t size, size_t n, FILE *stream);参数ptr是保存读取的数据，void*的指针可用任何类型的指针来替换，如char*、int *等等来替换；size是每块的字节数；n是读取的块数，如果成功，返回实际读取的块数(不是字节数)，本函数一般用于二进制模式打开的文件中。</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>例：char x[4230];</p>
-<p>　　FILE *file1=fopen(“c:msdos.sys”,”r”);</p>
-<p>　　fread(x,200,12 ,file1);//共读取200*12=2400个字节<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15. fwrite()：与fread对应，向流中写指定的数据，原型是size_t fwrite(const void *ptr, size_t size, size_t n, FILE *stream);参数ptr是要写入的数据指针，void*的指针可用任何类型的指针来替换，如char*、int *等等来替换；size是每块的字节数；n是要写的块数，如果成功，返回实际写入的块数(不是字节数)，本函数一般用于二进制模式打开的文件中。</span><br></pre></td></tr></table></figure></p>
-<p>例：char x[]=”I Love You”;</p>
-<p>　　fwire(x, 6,12,fp);//写入6*12=72字节</p>
-<p>　　将把”I Love”写到流fp中12次，共72字节<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">16. tmpfile()： 其原型是FILE *tmpfile(void); 生成一个临时文件，以&quot;w+b&quot;的模式打开，并返回这个临时流的指针，如果失败返回NULL。在程序结束时，这个文件会被自动删除。例：FILE *fp=tmpfile();</span><br><span class="line">17. tmpnam()：其原型为char *tmpnam(char *s); 生成一个唯一的文件名，其实tmpfile()就调用了此函数，参数s用来保存得到的文件名，并返回这个指针，如果失败，返回NULL。例：tmpnam(str1);</span><br><span class="line"></span><br><span class="line">## 二、直接I/O文件操作</span><br><span class="line">这是C提供的另一种文件操作，它是通过直接存/取文件来完成对文件的处理.</span><br><span class="line">而上篇所说流式文件操作是通过缓冲区来进行；流式文件操作是围绕一个FILE 指针来进行，而此类文件操作是围绕一个文件的“句柄”来进行。</span><br><span class="line">什么是句柄呢？它是一个整数，是系统用来标识一个文件(在WINDOWS中，句柄的概念扩展到所有设备资源的标识)的唯一的记号。</span><br><span class="line">此类文件操作常用的函数如下表，这些函数及其所用的一些符号在io.h和fcntl.h中定义，在使用时要加入相应的头文件。</span><br><span class="line">函数 　　　　　　　　说明</span><br><span class="line">open() 　　　　　　　打开一个文件并返回它的句柄</span><br><span class="line">close() 　　　　　　   关闭一个句柄</span><br><span class="line">lseek() 　　　　　　   定位到文件的指定位置</span><br><span class="line">read() 　　　　　　    块读文件</span><br><span class="line">write() 　　　　　　　块写文件</span><br><span class="line">eof() 　　　　　　　  测试文件是否结束</span><br><span class="line">filelength()　　　　　 取得文件长度</span><br><span class="line">rename() 　　　　　  重命名文件</span><br><span class="line">chsize() 　　　　    　改变文件长度</span><br><span class="line">下面就对这些函数一 一说明：</span><br><span class="line">1. open()：</span><br><span class="line">打开一个文件并返回它的句柄，如果失败，将返回一个小于0的值，原型是int open(const char *path, int access [, unsigned mode]); </span><br><span class="line">参数path是要打开的文件名，access是打开的模式，mode是可选项。表示文件的属性，主要用于UNIX系统中，在DOS/WINDOWS这个参数没有意义。其中文件的打开模式如下表。</span><br><span class="line">符号 　　　　　　含义 　　　　　　符号　　　　　　 含义 　　　　　　　　　　　　　　符号 　　　　　　含义</span><br><span class="line">O_RDONLY 　　只读方式 　　　O_WRONLY 　　只写方式 　　　　　　　　　　　　O_RDWR      　读/写方式</span><br><span class="line">O_NDELAY 　　用于UNIX系统  O_APPEND 　　 追加方式 　　　　　　　　　　　　O_CREAT 　　  如果文件不存在就创建</span><br><span class="line">O_TRUNC 　　 把文件长度截为0  O_EXCL 和O_CREAT连用，如果文件存在返回错误   O_BINARY 二进制方式</span><br><span class="line">O_TEXT 　　　 文本方式</span><br><span class="line">对于多个要求，可以用&quot;|&quot;运算符来连接，如O_APPEND|O_TEXT表示以文本模式和追加方式打开文件。</span><br><span class="line">例：int handle=open(&quot;c:msdos.sys&quot;,O_BINARY|O_CREAT|O_WRITE)</span><br><span class="line">2. close()：关闭一个句柄，原型是int close(int handle);如果成功返回0 .例：close(handle)</span><br><span class="line">3. lseek()：定位到指定的位置，原型是：long lseek(int handle, long offset, int fromwhere);参数offset是移动的量，fromwhere是移动的基准位置，取值和前面讲的fseek()一样，SEEK_SET：文件首部；SEEK_CUR：文件当前位置；SEEK_END：文件尾。此函数返回执行后文件新的存取位置。</span><br><span class="line">```例：lseek(handle,-1234L,SEEK_CUR);//把存取位置从当前位置向前移动1234个字节。</span><br></pre></td></tr></table></figure></p>
-<p>　　x=lseek(hnd1,0L,SEEK_END);//把存取位置移动到文件尾，x=文件尾的位置即文件长度</p>
-<ol start="4">
-<li>read()：从文件读取一块，原型是int read(int handle, void *buf, unsigned len);参数buf保存读出的数据，len是读取的字节。函数返回实际读出的字节。例：char x[200];read(hnd1,x,200);</li>
-<li>write()：写一块数据到文件中，原型是int write(int handle, void *buf, unsigned len);参数的含义同read()，返回实际写入的字节。例：char x[]=”I Love You”;write(handle,x,strlen(x));</li>
-<li>略过。。。</li>
-<li>eof()：类似feof()，测试文件是否结束，是返回1，否则返回0;原型是：int eof(int handle);<br>例：while(!eof(handle1)){……};</li>
-<li>filelength()： 返回文件长度，原型是long filelength(int handle);相当于lseek(handle,0L,SEEK_END)<br>例：long x=filelength(handle);</li>
-<li>rename()： 重命名文件，原型是int rename(const char <em>oldname, const char </em>newname); 参数oldname是旧文件名，newname是新文件名。成功返回0 。<br>例：rename(“c:config.sys”,”c:config.w40”);</li>
-<li>chsize(); 改变文件长度，原型是int chsize(int handle, long size);参数size表示文件新的长度，成功返回0，否则返回-1，如果指定的长度小于文件长度，则文件被截短；如果指定的长度大于文件长度，则在文件后面补’’。<br>例：chsize(handle,0x12345);</li>
-</ol>
-<p>如果熟悉汇编可能会发现这种方式和汇编语言的DOS功能调用句柄式文件操作很像，比如open()就像DOS服务的3CH号功能调用，其实这种操作还有两种类型的函数就是直接用DOS功能来完成的，如_open()，_dos_open()等等。有兴趣可自已查询BCB的帮助。<br>同流式文件操作相同，这种也提供了Unicode字符操作的函数，如_wopen()等等，用于9X/NT下的宽字符编程，有兴趣可自已查询BCB的帮助。<br>另外，此种操作还有lock(),unlock(),locking()等用于多用户操作的函数，但在BCB中用得并不多，就不介绍了，但如果要用C来写CGI，这些就必要的常识了，如果你有这方面的要求，那就得自已好好看帮助了。</p>
-
+<li>I/O文件操作 *
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/11/C语言文件操作api/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
 
     
 
@@ -1832,176 +1798,6 @@ Windows在默认情况下会将高地址的2GB空间分配给内核（也可以�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/时间和空间复杂度/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JoAiden Lee">
-      <meta itemprop="description" content="学海无涯，不一定非要苦作舟">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Create-Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/08/时间和空间复杂度/" class="post-title-link" itemprop="url">时间和空间复杂度</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-08 09:51:13" itemprop="dateCreated datePublished" datetime="2019-05-08T09:51:13+08:00">2019-05-08</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-06-10 19:51:23" itemprop="dateModified" datetime="2019-06-10T19:51:23+08:00">2019-06-10</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-		
-	<div>
-		
-		}
-	</div>
-      
-      
-
-      
-        
-          
-            <h1 id="时间和空间复杂度"><a href="#时间和空间复杂度" class="headerlink" title="时间和空间复杂度"></a>时间和空间复杂度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">时间复杂度： 时间频率：语句执行次数T(n)</span><br><span class="line">1.对于一些简单的输入输出语句或赋值语句,近似认为需要O(1)时间</span><br><span class="line">(1)、O(1)</span><br><span class="line">        Temp=i; i=j; j=temp;   </span><br><span class="line">(2)、O(n2)</span><br><span class="line">2.1. 交换i和j的内容</span><br><span class="line">sum=0；                 （一次）  </span><br><span class="line">for(i=1;i&lt;=n;i++)     （n+1次）  </span><br><span class="line">   for(j=1;j&lt;=n;j++) （n2次）  </span><br><span class="line">    sum++；            （n2次）  </span><br><span class="line">解：因为Θ(2n2+n+1)=n2（Θ即：去低阶项，去掉常数项，去掉高阶项的常参得到），所以T(n)= =O(n2)；</span><br><span class="line">2.2.   </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">for (i=1;i&lt;n;i++)  </span><br><span class="line"> &#123;   </span><br><span class="line">     y=y+1;         ①     </span><br><span class="line">     for (j=0;j&lt;=(2*n);j++)      </span><br><span class="line">        x++;         ②        </span><br><span class="line"> &#125;            </span><br><span class="line">解： 语句1的频度是n-1</span><br><span class="line">          语句2的频度是(n-1)*(2n+1)=2n2-n-1</span><br><span class="line">          f(n)=2n2-n-1+(n-1)=2n2-2；</span><br><span class="line">        又Θ(2n2-2)=n2</span><br><span class="line">          该程序的时间复杂度T(n)=O(n2).  </span><br><span class="line">(3)、O（n）                                                              </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  a=0;  </span><br><span class="line">  b=1;                      ①  </span><br><span class="line">  for (i=1;i&lt;=n;i++) ②  </span><br><span class="line">  &#123;    </span><br><span class="line">     s=a+b;　　　　③  </span><br><span class="line">     b=a;　　　　　④    </span><br><span class="line">     a=s;　　　　　⑤  </span><br><span class="line">  &#125;  </span><br><span class="line">解： 语句1的频度：2,        </span><br><span class="line">           语句2的频度： n,        </span><br><span class="line">          语句3的频度： n-1,        </span><br><span class="line">          语句4的频度：n-1,    </span><br><span class="line">          语句5的频度：n-1,                                  </span><br><span class="line">          T(n)=2+n+3(n-1)=4n-1=O(n).     </span><br><span class="line">(4)、O(log2n)</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">i=1;     ①  </span><br><span class="line">hile (i&lt;=n)  </span><br><span class="line">  i=i*2; ②  </span><br><span class="line">解： 语句1的频度是1,  </span><br><span class="line">          设语句2的频度是f(n),   则：2^f(n)&lt;=n;f(n)&lt;=log2n    </span><br><span class="line">          取最大值f(n)=log2n,</span><br><span class="line">          T(n)=O(log2n )</span><br><span class="line"></span><br><span class="line">(5)、O(n3) </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">for(i=0;i&lt;n;i++)  </span><br><span class="line">   &#123;    </span><br><span class="line">      for(j=0;j&lt;i;j++)    </span><br><span class="line">      &#123;  </span><br><span class="line">         for(k=0;k&lt;j;k++)  </span><br><span class="line">            x=x+2;    </span><br><span class="line">      &#125;  </span><br><span class="line">   &#125;  </span><br><span class="line"></span><br><span class="line">解：当i=m, j=k的时候,内层循环的次数为k当i=m时, j 可以取 0,1,...,m-1 , 所以这里最内循环共进行了0+1+...+m-1=(m-1)m/2次所以,i从0取到n, 则循环共进行了: 0+(1-1)*1/2+...+(n-1)n/2=n(n+1)(n-1)/6所以时间复杂度为O(n3).</span><br></pre></td></tr></table></figure>
-<p>【1】如果算法的执行时间不随着问题规模n的增加而增长，即使算法中有上千条语句，其执行时间也不过是一个较大的常数。此类算法的时间复杂度是O(1)。<br>【2】当有若干个循环语句时，算法的时间复杂度是由嵌套层数最多的循环语句中最内层语句的频度f(n)决定的。<br>【3】算法的时间复杂度不仅仅依赖于问题的规模，还与输入实例的初始状态有关。</p>
-<p>空间复杂度(Space Complexity)是对一个算法在运行过程中临时占用存储空间大小的量度。</p>
-<p>数据结构运算：修改，插入，删除，查找，排序</p>
-<p>修改： V[i] = x;<br>时间复杂度：O(1)<br>空间复杂度：O(1)<br>稳定性：稳定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">插入： 插入于 1=&lt; i &gt;= n+1</span><br><span class="line">	for(j=n;j&gt;=i;j--)</span><br><span class="line">		a[j+1]=a[j];</span><br><span class="line">	a[i]=x;</span><br><span class="line">	n++;</span><br><span class="line">时间复杂度：O(n)</span><br><span class="line">空间复杂度：</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-	<div>
-      	
-	</div>
-
-	<div>
-    	
- 	</div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/数组问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2109,6 +1905,176 @@ Windows在默认情况下会将高地址的2GB空间分配给内核（也可以�
 </ol>
 <p>kjmeng<br>翻译于 2018/12/19 17:39<br> 顶<br>0</p>
 <p>解决数组问题的关键是，你要对数组这种数据结构有一个深刻的认识，同时还要了解基本的程序流程如循环、递归以及基本的操作符。<br>下面是一些经常问到和数组相关的面试题，你可以拿来练习：<br>在一个给定的从1到100的整型数组中，如何快速找到缺失的数字？（解决方案）<br>如何找到一个给定的整型数组中的重复数字？（解决方案）<br>在一个未排序的整型数组中，如何找到最大和最小的数字？（解决方案）<br>在一个整型数组中，如何找到一个所有成对的数字，满足它们的和等于一个给定的数字？（解决方案）<br>如果一个数组包含多个重复元素，如何找到这些重复的数字？（解决方案）<br>用 Java 实现从一个给定数组中删除重复元素？（解决方案）<br>如何利用快速排序对一个整型数组进行排序？（解决方案）<br>如何从一个数组中删除重复元素？（解决方案）<br>用 Java 实现数组反转？（解决方案）<br>如何不借助库实现从数组中删除重复元素？（解决方案）<br>这些问题不仅可以帮助你提高解决问题的技巧，还可以帮助提升对数组结构的认识。<br>如果你需要更多关于数组的进阶的问题，可以参考《代码面试训练营：算法和数据结构》，这是一个训练营形式的算法课程，特别针对像 Google、微软、Apple 和 Facebook 这样的技术巨人面试准备而设计。<br>如果你感觉 10 个问题还不够，还需要更多的联系，那就看看这个 30 个数组问题的列表。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+	<div>
+      	
+	</div>
+
+	<div>
+    	
+ 	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/时间和空间复杂度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JoAiden Lee">
+      <meta itemprop="description" content="学海无涯，不一定非要苦作舟">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Create-Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/08/时间和空间复杂度/" class="post-title-link" itemprop="url">时间和空间复杂度</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-08 09:51:13" itemprop="dateCreated datePublished" datetime="2019-05-08T09:51:13+08:00">2019-05-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-10 19:51:23" itemprop="dateModified" datetime="2019-06-10T19:51:23+08:00">2019-06-10</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+		
+	<div>
+		
+		}
+	</div>
+      
+      
+
+      
+        
+          
+            <h1 id="时间和空间复杂度"><a href="#时间和空间复杂度" class="headerlink" title="时间和空间复杂度"></a>时间和空间复杂度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">时间复杂度： 时间频率：语句执行次数T(n)</span><br><span class="line">1.对于一些简单的输入输出语句或赋值语句,近似认为需要O(1)时间</span><br><span class="line">(1)、O(1)</span><br><span class="line">        Temp=i; i=j; j=temp;   </span><br><span class="line">(2)、O(n2)</span><br><span class="line">2.1. 交换i和j的内容</span><br><span class="line">sum=0；                 （一次）  </span><br><span class="line">for(i=1;i&lt;=n;i++)     （n+1次）  </span><br><span class="line">   for(j=1;j&lt;=n;j++) （n2次）  </span><br><span class="line">    sum++；            （n2次）  </span><br><span class="line">解：因为Θ(2n2+n+1)=n2（Θ即：去低阶项，去掉常数项，去掉高阶项的常参得到），所以T(n)= =O(n2)；</span><br><span class="line">2.2.   </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">for (i=1;i&lt;n;i++)  </span><br><span class="line"> &#123;   </span><br><span class="line">     y=y+1;         ①     </span><br><span class="line">     for (j=0;j&lt;=(2*n);j++)      </span><br><span class="line">        x++;         ②        </span><br><span class="line"> &#125;            </span><br><span class="line">解： 语句1的频度是n-1</span><br><span class="line">          语句2的频度是(n-1)*(2n+1)=2n2-n-1</span><br><span class="line">          f(n)=2n2-n-1+(n-1)=2n2-2；</span><br><span class="line">        又Θ(2n2-2)=n2</span><br><span class="line">          该程序的时间复杂度T(n)=O(n2).  </span><br><span class="line">(3)、O（n）                                                              </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  a=0;  </span><br><span class="line">  b=1;                      ①  </span><br><span class="line">  for (i=1;i&lt;=n;i++) ②  </span><br><span class="line">  &#123;    </span><br><span class="line">     s=a+b;　　　　③  </span><br><span class="line">     b=a;　　　　　④    </span><br><span class="line">     a=s;　　　　　⑤  </span><br><span class="line">  &#125;  </span><br><span class="line">解： 语句1的频度：2,        </span><br><span class="line">           语句2的频度： n,        </span><br><span class="line">          语句3的频度： n-1,        </span><br><span class="line">          语句4的频度：n-1,    </span><br><span class="line">          语句5的频度：n-1,                                  </span><br><span class="line">          T(n)=2+n+3(n-1)=4n-1=O(n).     </span><br><span class="line">(4)、O(log2n)</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">i=1;     ①  </span><br><span class="line">hile (i&lt;=n)  </span><br><span class="line">  i=i*2; ②  </span><br><span class="line">解： 语句1的频度是1,  </span><br><span class="line">          设语句2的频度是f(n),   则：2^f(n)&lt;=n;f(n)&lt;=log2n    </span><br><span class="line">          取最大值f(n)=log2n,</span><br><span class="line">          T(n)=O(log2n )</span><br><span class="line"></span><br><span class="line">(5)、O(n3) </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">for(i=0;i&lt;n;i++)  </span><br><span class="line">   &#123;    </span><br><span class="line">      for(j=0;j&lt;i;j++)    </span><br><span class="line">      &#123;  </span><br><span class="line">         for(k=0;k&lt;j;k++)  </span><br><span class="line">            x=x+2;    </span><br><span class="line">      &#125;  </span><br><span class="line">   &#125;  </span><br><span class="line"></span><br><span class="line">解：当i=m, j=k的时候,内层循环的次数为k当i=m时, j 可以取 0,1,...,m-1 , 所以这里最内循环共进行了0+1+...+m-1=(m-1)m/2次所以,i从0取到n, 则循环共进行了: 0+(1-1)*1/2+...+(n-1)n/2=n(n+1)(n-1)/6所以时间复杂度为O(n3).</span><br></pre></td></tr></table></figure>
+<p>【1】如果算法的执行时间不随着问题规模n的增加而增长，即使算法中有上千条语句，其执行时间也不过是一个较大的常数。此类算法的时间复杂度是O(1)。<br>【2】当有若干个循环语句时，算法的时间复杂度是由嵌套层数最多的循环语句中最内层语句的频度f(n)决定的。<br>【3】算法的时间复杂度不仅仅依赖于问题的规模，还与输入实例的初始状态有关。</p>
+<p>空间复杂度(Space Complexity)是对一个算法在运行过程中临时占用存储空间大小的量度。</p>
+<p>数据结构运算：修改，插入，删除，查找，排序</p>
+<p>修改： V[i] = x;<br>时间复杂度：O(1)<br>空间复杂度：O(1)<br>稳定性：稳定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">插入： 插入于 1=&lt; i &gt;= n+1</span><br><span class="line">	for(j=n;j&gt;=i;j--)</span><br><span class="line">		a[j+1]=a[j];</span><br><span class="line">	a[i]=x;</span><br><span class="line">	n++;</span><br><span class="line">时间复杂度：O(n)</span><br><span class="line">空间复杂度：</span><br></pre></td></tr></table></figure></p>
 
           
         

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-11T13:09:30.201Z</updated>
+  <updated>2019-06-11T13:57:41.947Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,14 +21,13 @@
     <link href="http://yoursite.com/2019/06/11/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9Capi/"/>
     <id>http://yoursite.com/2019/06/11/C语言文件操作api/</id>
     <published>2019-06-11T12:52:18.000Z</published>
-    <updated>2019-06-11T13:09:30.201Z</updated>
+    <updated>2019-06-11T13:57:41.947Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;在ANSIC中，对文件的操作分为两种方式，即&quot;&gt;&lt;a href=&quot;#在ANSIC中，对文件的操作分为两种方式，即&quot; class=&quot;headerlink&quot; title=&quot;在ANSIC中，对文件的操作分为两种方式，即:&quot;&gt;&lt;/a&gt;在ANSIC中，对文件的操作分为两种方
-      
+      &lt;h2 id=&quot;在ANSIC中，对文件的操作分为两种方式&quot;&gt;&lt;a href=&quot;#在ANSIC中，对文件的操作分为两种方式&quot; class=&quot;headerlink&quot; title=&quot;在ANSIC中，对文件的操作分为两种方式&quot;&gt;&lt;/a&gt;在ANSIC中，对文件的操作分为两种方式&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;流式文件操作 *&lt;/li&gt;
+&lt;li&gt;I/O文件操作 *
     
     </summary>
     
@@ -128,25 +127,6 @@
   </entry>
   
   <entry>
-    <title>时间和空间复杂度</title>
-    <link href="http://yoursite.com/2019/05/08/%E6%97%B6%E9%97%B4%E5%92%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
-    <id>http://yoursite.com/2019/05/08/时间和空间复杂度/</id>
-    <published>2019-05-08T01:51:13.000Z</published>
-    <updated>2019-06-10T11:51:23.336Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;时间和空间复杂度&quot;&gt;&lt;a href=&quot;#时间和空间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间和空间复杂度&quot;&gt;&lt;/a&gt;时间和空间复杂度&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>数组问题</title>
     <link href="http://yoursite.com/2019/05/08/%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2019/05/08/数组问题/</id>
@@ -159,6 +139,25 @@
       
         &lt;ol&gt;
 &lt;li&gt;数组问题&lt;br&gt;数组是最常用的基础数据结构，它将元素保存在连续的内存中。它也是面试最喜欢的问题之一，在代码面试中你会经常听到很多关于数组的问题，例如，数组的反转、数组的排序或者查找数组中的一个元素。&lt;br&gt;数组结构的一个关键优点是在知道索引的情况能够以 O(1)
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>时间和空间复杂度</title>
+    <link href="http://yoursite.com/2019/05/08/%E6%97%B6%E9%97%B4%E5%92%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
+    <id>http://yoursite.com/2019/05/08/时间和空间复杂度/</id>
+    <published>2019-05-08T01:51:13.000Z</published>
+    <updated>2019-06-10T11:51:23.336Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;时间和空间复杂度&quot;&gt;&lt;a href=&quot;#时间和空间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间和空间复杂度&quot;&gt;&lt;/a&gt;时间和空间复杂度&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
       
     
     </summary>
